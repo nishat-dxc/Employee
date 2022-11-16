@@ -14,7 +14,7 @@ import com.example.springboot.model.Employee;
 import com.example.springboot.service.EmployeeService;
 
 @RestController
-@RequestMapping("/db/employees")
+@RequestMapping("/db")
 public class EmployeeController {
 
 	private EmployeeService employeeService;
@@ -25,7 +25,7 @@ public class EmployeeController {
 	}
 	
 	//create employee REST api
-	@PostMapping
+	@PostMapping("/addEmployees")
 	public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee){
 		return new ResponseEntity<Employee>(employeeService.saveEmployee(employee), HttpStatus.CREATED);
 
